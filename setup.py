@@ -1,10 +1,15 @@
 from setuptools import setup
+import sys
+if not (sys.version_info.major == 3 and sys.version_info.minor == 2):
+	p = ["dict2xml.no32"]
+else:
+	p = []
 
 # Setup the project
 setup(
       name = "dict2xml"
     , version = '1.4.1'
-    , packages = ['dict2xml']
+    , packages = ['dict2xml'] + p
 
     , extras_require =
       { 'tests' :
